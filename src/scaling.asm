@@ -3,14 +3,13 @@
 @start:
 ;  gl_shell_scaling
 la      at, PLAYER_IDX
-lb      v0, 0x0(at)
-sll     v0, v0, 2
+lb      v1, 0x0(at)
+sll     v1, v1, 2
 la      at, PLAYER_PTR
-addu    at, at, v0
+addu    at, at, v1
 lw      at, 0x0(at)
-addiu   at, at, ATTACK_OFFSET
-lh      at, 0x0(at)
-lb      v0, 0x0(v1)
+lh      at, ATTACK_OFFSET(at)
+lb      v0, 0x0(v0)
 mult    v0, at
 mflo    v0
 srl     v0, v0, 7
