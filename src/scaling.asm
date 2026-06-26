@@ -1,6 +1,11 @@
-.word LOAD_ADD
-.word @end-@start
-@start:
+.word 1 ;  Main Block
+.word main_block_end-main_block
+.ascii "GLRB"
+
+.ifndef main_block
+main_block:
+scaling:
+.endif
     addiu   sp, sp, -4
     sw      v1, 0x0(sp)
 
@@ -21,4 +26,6 @@
     lw      v1, 0x0(sp)
     jr      ra
     addiu   sp, sp, 4
-@end:
+.ifndef main_block_end
+main_block_end:
+.endif

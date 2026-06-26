@@ -1,6 +1,5 @@
 .psp
 
-LOAD_ADD equ 0x08800A00
 HOOK_OFFSET equ 0x984
 
 WE00    equ 0x0A24E200
